@@ -64,8 +64,38 @@
     #emph[For the following problems and the rest of the semester, compute semi-major axis instead of angular momentum when classical (Keplerian) orbit elements are requested, unless otherwise specified.]
 ]
 
-// TODO:
-Answer
+We want functions $f(h) = a$ and $g(a) = h$ for specific angular momentum $h = abs(vbu(h))$ and semi-major axis $a$.
+
+Semi-latus rectum $p$ relates to semi-major axis by:
+$
+    p = a (1 - e^2)
+$
+
+and to specific angular momentum by:
+$
+    p = h^2/mu
+$
+
+Equating the two gives:
+$
+    a (1 - e^2) = h^2/mu
+$
+
+Solving for $h$ gives:
+$
+    h = sqrt(mu a (1 - e^2))
+$
+
+and solving for $a$ gives:
+$
+    a = h^2/(mu (1 - e^2))
+$
+
+Thus, we have (as long as $e eq.not 1$):
+$
+    h & = sqrt(mu a (1 - e^2)) \
+    a & = h^2/(mu (1 - e^2)) quad qed
+$
 <hwk:s01>
 
 #pagebreak(weak: true)
@@ -78,8 +108,39 @@ Answer
     ) <fig:p02>
 ] <hwk:p02>
 
-// TODO:
-Answer
+The time since periapsis for an elliptical orbit, given the mean anomaly and the period is:
+$
+    M_e = (2 pi)/T t
+$
+
+The relation between the mean anomaly and the eccentric anomaly for an elliptical orbit, given the eccentricity, is:
+$
+    M_e = E - e sin(E)
+$
+
+Equating the two gives:
+$
+    (2 pi)/T t = E - e sin(E)
+$
+
+Solving for $t$ gives:
+$
+    t = (E - e sin(E))/(2 pi) T
+$ <eqn:t_E_e_T>
+
+As $B$ is on the minor axis, $E = pi/2$.
+
+Substituting $E = pi/2$ and computing:
+$
+    t & = (E - e sin(E))/(2 pi) T \
+      & = (pi/2 - e sin(pi/2))/(2 pi) T \
+      & = (1/4 - e/(2 pi)) T
+$
+
+Thus, the time required is:
+$
+    t = (1/4 - e/(2 pi)) T quad qed
+$
 <hwk:s02>
 
 #pagebreak(weak: true)
@@ -92,8 +153,34 @@ Answer
     ) <fig:p03>
 ] <hwk:p03>
 
-// TODO:
-Answer
+Using #link(<eqn:t_E_e_T>)[our formula for the time since periapsis for an elliptical orbit, given the eccentric anomaly, eccentricity, and the period] from #link(<hwk:s02>)[our solution to Problem 2]:
+$
+    t = (E - e sin(E))/(2 pi) T
+$
+
+The relation between eccentric anomaly and true anomaly is:
+$
+    E = arccos((e + cos(theta))/(1 + e cos(theta)))
+$
+
+Combining these equations, we have:
+$
+    t = (arccos((e + cos(theta))/(1 + e cos(theta))) - e sin(arccos((e + cos(theta))/(1 + e cos(theta)))))/(2 pi) T
+$
+
+As the angle between $B$ and $P$ is #qty(90, "degree"), so $theta = pi/2$.
+
+Substituting $e = 0.3$ and $theta = pi/2$ and computing:
+$
+    t &= (arccos((e + cos(theta))/(1 + e cos(theta))) - e sin(arccos((e + cos(theta))/(1 + e cos(theta)))))/(2 pi) T \
+    &= (arccos((0.3 + cos(pi/2))/(1 + 0.3 cos(pi/2))) - 0.3 sin(arccos((0.3 + cos(pi/2))/(1 + 0.3 cos(pi/2)))))/(2 pi) T \
+    &= 0.156 T
+$
+
+Thus, the time required is:
+$
+    t = 0.156 T quad qed
+$
 <hwk:s03>
 
 #pagebreak(weak: true)
