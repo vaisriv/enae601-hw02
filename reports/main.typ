@@ -33,16 +33,16 @@
 
 // assignment info
 #show: homework.with(
-    title: "HW00",
+    title: "HW02",
     author: "Vai Srivastava",
     collaborators: [],
-    course-id: "Course: Description",
-    instructor: "Instructor",
+    course-id: "ENAE 601: Astrodynamics",
+    instructor: "Dr. Healy",
     semester: "Fall 2026",
-    due-time: "January 01st. at 23:59",
+    due-time: "September 30th. at 23:59",
 
     // (defaults to A4)
-    paper-size: "us-letter", 
+    paper-size: "us-letter",
 )
 
 // document settings
@@ -58,39 +58,171 @@
 // Problems and Solutions //
 ////////////////////////////
 
-#prob(title: [Parts #emph[(\# pts)]])[
-    1. Instructions
-    <hwk:p01a>
+#prob(title: "")[
+    Where Curtis says "orbital elements", he substitutes angular momentum for the standard semi-major axis. Show how to compute one from the other.
 
-    2. Instructions
-    <hwk:p01b>
-] <hwk:p01>
+    #emph[For the following problems and the rest of the semester, compute semi-major axis instead of angular momentum when classical (Keplerian) orbit elements are requested, unless otherwise specified.]
+]
 
-1. Answer
-
-<hwk:s01a>
-
-2. Answer
-
-<hwk:s01b>
+// TODO:
+Answer
+<hwk:s01>
 
 #pagebreak(weak: true)
 
-#prob(title: [Code #emph[(\# pts)]])[
-    Instructions
+#prob(title: "Curtis 3.5")[
+    Calculate the time required to fly from $P$ to $B$, in terms of the eccentricity $e$ and the period $T$. $B$ lies on the minor axis.
+
+    #figure(
+        image("../references/p3.5.png", width: 50%),
+    ) <fig:p02>
 ] <hwk:p02>
 
-#figure(
-    image("../outputs/figures/s02.png", width: 65%),
-    caption: [Sine Wave on $x = [0 10]$]
-) <fig:s02>
-
-#raw(read("../outputs/text/s02.txt"), block: true) <code:s02>
-
-See the #link("https://github.com/vaisriv/enae601-hw02/blob/main/src/index.py#L1")[Python code] for this problem.
+// TODO:
+Answer
+<hwk:s02>
 
 #pagebreak(weak: true)
 
+#prob(title: "Curtis 3.6")[
+    If the eccentricity of the elliptical orbit is $0.3$, calculate, in terms of the period $T$, the time required to fly from $P$ to $B$.
+
+    #figure(
+        image("../references/p3.6.png", width: 50%),
+    ) <fig:p03>
+] <hwk:p03>
+
+// TODO:
+Answer
+<hwk:s03>
+
+#pagebreak(weak: true)
+
+#prob(title: "Curtis 3.8")[
+    A satellite is in Earth orbit for which the perigee altitude is #qty(200, "km") and the apogee altitude is #qty(600, "km"). Find the time interval during which the satellite remains above an altitude of #qty(400, "km").
+] <hwk:p04>
+
+// TODO:
+Answer
+<hwk:s04>
+
+#pagebreak(weak: true)
+
+#prob(title: "Curtis 3.9")[
+    An Earth-orbiting satellite has a perigee radius of #qty(7000, "km") and an apogee radius of #qty(10000, "km").
+
+    + What true anomaly $Delta theta$ is swept out between $t = qty(0.5, "h")$ and $t = qty(1.5, "h")$ after perigee passage?
+    <hwk:p05a>
+
+    + What area is swept out by the position vector during that time interval?
+    <hwk:p05b>
+] <hwk:p05>
+
+// TODO:
++ Answer
+<hwk:s05a>
+
+// TODO:
++ Answer
+<hwk:s05b>
+
+#pagebreak(weak: true)
+
+#prob(title: "Curtis 3.10")[
+    An Earth-orbiting satellite has a period of #qty(14, "h") and a perigee radius of #qty(10000, "km"). At time $t = qty(10, "h")$ after perigee passage, determine:
+
+    + The radial position.
+    <hwk:p06a>
+
+    + The speed.
+    <hwk:p06b>
+
+    + The radial component of the velocity.
+    <hwk:p06c>
+] <hwk:p06>
+
+// TODO:
++ Answer
+<hwk:s05a>
+
+// TODO:
++ Answer
+<hwk:s05b>
+
+// TODO:
++ Answer
+<hwk:s05c>
+
+#pagebreak(weak: true)
+
+#prob(title: "Curtis 3.15")[
+    A spacecraft on a parabolic trajectory around the Earth has a perigee radius of #qty(6600, "km").
+
+    + How long does it take to coast from $theta = -qty(90, "degree")$ to $theta = +qty(90, "degree")$?
+    <hwk:p06a>
+
+    + How far is the spacecraft from the center of the Earth #qty(36, "h") after passing through perigee?
+    <hwk:p06b>
+] <hwk:p06>
+
+// TODO:
++ Answer
+<hwk:s06a>
+
+// TODO:
++ Answer
+<hwk:s06b>
+
+#pagebreak(weak: true)
+
+#prob(title: "Curtis 3.16")[
+    A spacecraft on a hyperbolic trajectory around the Earth has a perigee radius of #qty(6600, "km") and a perigee speed of $1.2 v_"esc"$.
+
+    + How long does it take to coast from $theta = -qty(90, "degree")$ to $theta = +qty(90, "degree")$?
+    <hwk:p07a>
+
+    + How far is the spacecraft from the center of the Earth #qty(24, "h") after passing through perigee?
+    <hwk:p07b>
+] <hwk:p07>
+
+// TODO:
++ Answer
+<hwk:s07a>
+
+// TODO:
++ Answer
+<hwk:s07b>
+
+#pagebreak(weak: true)
+
+#prob(title: "Curtis 3.17")[
+    A trajectory has a perigee velocity $1.1 v_"esc"$ and a perigee altitude of #qty(200, "km"). If at 10 a.m., the satellite is travelling towards the Earth with a speed of #qty(8, "km/s"), how far will it be from the Earth's surface at 5 p.m. the same day?
+] <hwk:p08>
+
+// TODO:
++ Answer
+<hwk:s08>
+
+#pagebreak(weak: true)
+#prob(title: "Curtis 3.18")[
+    An incoming object is sighted at an altitude of #qty(100000, "km") with a speed of #qty(6, "km/s") and a flight path angle of $-qty(80, "degree")$.
+
+    + Will it impact the Earth or fly by?
+    <hwk:p09a>
+
+    + What is the time to impact or to closest approach?
+    <hwk:p09b>
+] <hwk:p09>
+
+// TODO:
++ Answer
+<hwk:s09a>
+
+// TODO:
++ Answer
+<hwk:s09b>
+
+#pagebreak(weak: true)
 == Code
 
 #codly(header: [./src/index.py])
