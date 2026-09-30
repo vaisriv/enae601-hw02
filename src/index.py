@@ -61,8 +61,7 @@ def problem_02() -> None:
         [
             f"E_B = {eccentric_anomaly:.12f} rad = pi/2",
             "t/T = (E_B - e sin(E_B))/(2 pi)",
-            f"t/T = {constant_term:.12f} "
-            f"{eccentricity_coefficient:+.12f} e",
+            f"t/T = {constant_term:.12f} {eccentricity_coefficient:+.12f} e",
             "exact result: t/T = 1/4 - e/(2 pi)",
         ],
     )
@@ -78,8 +77,7 @@ def problem_03() -> None:
         / (1.0 + eccentricity * np.cos(true_anomaly))
     )
     time_period_ratio = (
-        eccentric_anomaly_value
-        - eccentricity * np.sin(eccentric_anomaly_value)
+        eccentric_anomaly_value - eccentricity * np.sin(eccentric_anomaly_value)
     ) / (2.0 * np.pi)
     write_output(
         "03",
@@ -99,9 +97,7 @@ def problem_04() -> None:
     radius_perigee = R_EARTH + 200.0
     radius_apogee = R_EARTH + 600.0
     semimajor_axis = (radius_perigee + radius_apogee) / 2.0
-    eccentricity = (radius_apogee - radius_perigee) / (
-        radius_apogee + radius_perigee
-    )
+    eccentricity = (radius_apogee - radius_perigee) / (radius_apogee + radius_perigee)
     mean_motion = np.sqrt(MU_EARTH / semimajor_axis**3)
     eccentric_anomaly_crossing = np.arccos(
         (1.0 - (R_EARTH + 400.0) / semimajor_axis) / eccentricity
@@ -125,23 +121,22 @@ def problem_05() -> None:
     heading("p05")
     radius_perigee, radius_apogee = 7000.0, 10000.0
     semimajor_axis = (radius_perigee + radius_apogee) / 2.0
-    eccentricity = (radius_apogee - radius_perigee) / (
-        radius_apogee + radius_perigee
-    )
+    eccentricity = (radius_apogee - radius_perigee) / (radius_apogee + radius_perigee)
     mean_motion = np.sqrt(MU_EARTH / semimajor_axis**3)
     times = np.array([0.5, 1.5]) * 3600.0
     mean_anomalies = mean_motion * times
     eccentric_anomalies = np.array(
-        [eccentric_anomaly(mean_anomaly, eccentricity) for mean_anomaly in mean_anomalies]
+        [
+            eccentric_anomaly(mean_anomaly, eccentricity)
+            for mean_anomaly in mean_anomalies
+        ]
     )
     true_anomalies = 2.0 * np.arctan2(
         np.sqrt(1.0 + eccentricity) * np.sin(eccentric_anomalies / 2.0),
         np.sqrt(1.0 - eccentricity) * np.cos(eccentric_anomalies / 2.0),
     )
     delta_true_anomaly = true_anomalies[1] - true_anomalies[0]
-    angular_momentum = np.sqrt(
-        MU_EARTH * semimajor_axis * (1.0 - eccentricity**2)
-    )
+    angular_momentum = np.sqrt(MU_EARTH * semimajor_axis * (1.0 - eccentricity**2))
     swept_area = 0.5 * angular_momentum * (times[1] - times[0])
     common = [
         f"a = {semimajor_axis:.6f} km; e = {eccentricity:.9f}",
@@ -308,9 +303,7 @@ def problem_10() -> None:
     mean_initial = hyperbolic_mean_from_true(true_initial, eccentricity)
     mean_motion = np.sqrt(MU_EARTH / semimajor_axis_magnitude**3)
     if radius_perigee <= R_EARTH:
-        true_event = -np.arccos(
-            (semilatus_rectum / R_EARTH - 1.0) / eccentricity
-        )
+        true_event = -np.arccos((semilatus_rectum / R_EARTH - 1.0) / eccentricity)
         mean_event = hyperbolic_mean_from_true(true_event, eccentricity)
         outcome = "impact"
     else:

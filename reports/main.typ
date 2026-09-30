@@ -191,18 +191,17 @@ $
 
 Take $mu = qty(398600, "km^3/s^2")$ and $R_E = qty(6378, "km")$. The apsidal radii, semi-major axis, and eccentricity are
 $
-    r_p &= R_E + qty(200, "km") = qty(6578, "km"), \
-    r_a &= R_E + qty(600, "km") = qty(6978, "km"), \
-    a &= (r_p + r_a)/2 = qty(6778, "km"), \
-    e &= (r_a-r_p)/(r_a+r_p) = 0.0295072.
+    r_p & = R_E + qty(200, "km") = qty(6578, "km"), \
+    r_a & = R_E + qty(600, "km") = qty(6978, "km"), \
+      a & = (r_p + r_a)/2 = qty(6778, "km"), \
+      e & = (r_a-r_p)/(r_a+r_p) = 0.0295072.
 $
 Thus, the limiting altitude of #qty(400, "km") corresponds to $r = qty(6778, "km") = a$. From $r = a(1-e cos(E))$, the outbound and inbound crossings occur at $E_1 = pi/2$ and $E_2 = 3pi/2$. Using $M_e=E-e sin(E)$ and $n=sqrt(mu/a^3)$,
 $
-    Delta t
-    &= ((E_2-e sin(E_2))-(E_1-e sin(E_1)))/n \
-    &= (pi+2e)/n \
-    &= qty(2828.89, "s") \
-    &= qty(47.1482, "min").
+    Delta t & = ((E_2-e sin(E_2))-(E_1-e sin(E_1)))/n \
+            & = (pi+2e)/n \
+            & = qty(2828.89, "s") \
+            & = qty(47.1482, "min").
 $
 Therefore, the satellite remains above #qty(400, "km") for
 $
@@ -223,39 +222,39 @@ $
 ] <hwk:p05>
 
 + The orbit parameters and mean motion are
-  $
-      a &= (r_p+r_a)/2 = qty(8500, "km"), \
-      e &= (r_a-r_p)/(r_a+r_p) = 0.1764706, \
-      n &= sqrt(mu/a^3).
-  $
-  At each time, solve Kepler's equation $M_e=n t=E-e sin(E)$, then obtain the true anomaly from
-  $
-      theta = 2 arctan(sqrt((1+e)/(1-e)) tan(E/2)).
-  $
-  Taking the quadrant of $theta$ from $E$ gives
-  $
-      theta(qty(0.5, "h")) &= qty(103.2819, "degree"), \
-      theta(qty(1.5, "h")) &= qty(231.9863, "degree").
-  $
-  Hence,
-  $
-      Delta theta = qty(128.7044, "degree") quad qed
-  $
+    $
+        a & = (r_p+r_a)/2 = qty(8500, "km"), \
+        e & = (r_a-r_p)/(r_a+r_p) = 0.1764706, \
+        n & = sqrt(mu/a^3).
+    $
+    At each time, solve Kepler's equation $M_e=n t=E-e sin(E)$, then obtain the true anomaly from
+    $
+        theta = 2 arctan(sqrt((1+e)/(1-e)) tan(E/2)).
+    $
+    Taking the quadrant of $theta$ from $E$ gives
+    $
+        theta(qty(0.5, "h")) & = qty(103.2819, "degree"), \
+        theta(qty(1.5, "h")) & = qty(231.9863, "degree").
+    $
+    Hence,
+    $
+        Delta theta = qty(128.7044, "degree") quad qed
+    $
 <hwk:s05a>
 
 + Kepler's second law gives a constant areal velocity $dot(A)=h/2$. Here
-  $
-      h = sqrt(mu a(1-e^2)) = qty(57293.8761, "km^2/s").
-  $
-  Since $Delta t=qty(1, "h")=qty(3600, "s")$,
-  $
-      Delta A &= h/2 Delta t \
-      &= qty(103128977, "km^2").
-  $
-  Therefore, the swept area is
-  $
-      Delta A = qty(103130000, "km^2") quad qed
-  $
+    $
+        h = sqrt(mu a(1-e^2)) = qty(57293.8761, "km^2/s").
+    $
+    Since $Delta t=qty(1, "h")=qty(3600, "s")$,
+    $
+        Delta A & = h/2 Delta t \
+                & = qty(103128977, "km^2").
+    $
+    Therefore, the swept area is
+    $
+        Delta A = qty(103130000, "km^2") quad qed
+    $
 <hwk:s05b>
 
 #pagebreak(weak: true)
@@ -274,41 +273,41 @@ $
 ] <hwk:p06>
 
 + From Kepler's third law and the perigee condition,
-  $
-      a &= root(3, mu(T/(2pi))^2) = qty(29490.324, "km"), \
-      e &= 1-r_p/a = 0.6609057.
-  $
-  Ten hours after perigee, $M_e=2pi t/T=10pi/7$. Solving $M_e=E-e sin(E)$ gives $E=qty(228.6963, "degree")$. Therefore,
-  $
-      r &= a(1-e cos(E)) \
-        &= qty(42354.921, "km").
-  $
-  Thus,
-  $
-      r = qty(42355, "km") quad qed
-  $
+    $
+        a & = root(3, mu(T/(2pi))^2) = qty(29490.324, "km"), \
+        e & = 1-r_p/a = 0.6609057.
+    $
+    Ten hours after perigee, $M_e=2pi t/T=10pi/7$. Solving $M_e=E-e sin(E)$ gives $E=qty(228.6963, "degree")$. Therefore,
+    $
+        r & = a(1-e cos(E)) \
+          & = qty(42354.921, "km").
+    $
+    Thus,
+    $
+        r = qty(42355, "km") quad qed
+    $
 <hwk:s06a>
 
 + The vis-viva equation gives
-  $
-      v &= sqrt(mu(2/r-1/a)) \
-        &= qty(2.303389, "km/s").
-  $
-  Hence,
-  $
-      v = qty(2.3034, "km/s") quad qed
-  $
+    $
+        v & = sqrt(mu(2/r-1/a)) \
+          & = qty(2.303389, "km/s").
+    $
+    Hence,
+    $
+        v = qty(2.3034, "km/s") quad qed
+    $
 <hwk:s06b>
 
 + Differentiating $r=a(1-e cos(E))$ and using $dot(E)=n/(1-e cos(E))$ gives
-  $
-      v_r = dot(r) = (n a e sin(E))/(1-e cos(E)).
-  $
-  Substitution yields
-  $
-      v_r = -qty(1.27090, "km/s") quad qed
-  $
-  The negative sign is expected because the spacecraft is moving inward after apogee.
+    $
+        v_r = dot(r) = (n a e sin(E))/(1-e cos(E)).
+    $
+    Substitution yields
+    $
+        v_r = -qty(1.27090, "km/s") quad qed
+    $
+    The negative sign is expected because the spacecraft is moving inward after apogee.
 <hwk:s06c>
 
 #pagebreak(weak: true)
@@ -324,36 +323,35 @@ $
 ] <hwk:p07>
 
 + For a parabola, $p=2r_p=qty(13200, "km")$. Barker's equation is
-  $
-      t-t_p = 1/2 sqrt(p^3/mu)(D+D^3/3),
-      quad D=tan(theta/2).
-  $
-  At $theta=plus.minus pi/2$, $D=plus.minus 1$. Symmetry about perigee therefore gives
-  $
-      Delta t
-      &= sqrt(p^3/mu)(1+1/3) \
-      &= qty(3202.809, "s") \
-      &= qty(53.3801, "min").
-  $
-  Thus,
-  $
-      Delta t = qty(53.38, "min") quad qed
-  $
+    $
+        t-t_p = 1/2 sqrt(p^3/mu)(D+D^3/3),
+        quad D=tan(theta/2).
+    $
+    At $theta=plus.minus pi/2$, $D=plus.minus 1$. Symmetry about perigee therefore gives
+    $
+        Delta t & = sqrt(p^3/mu)(1+1/3) \
+                & = qty(3202.809, "s") \
+                & = qty(53.3801, "min").
+    $
+    Thus,
+    $
+        Delta t = qty(53.38, "min") quad qed
+    $
 <hwk:s07a>
 
 + At $t-t_p=qty(36, "h")$, Barker's equation becomes
-  $
-      D+D^3/3 = (2t)/(sqrt(p^3/mu)).
-  $
-  Its real solution is $D=6.7206602$. Since $r=p/(1+cos(theta))=r_p(1+D^2)$,
-  $
-      r &= qty(6600, "km")(1+6.7206602^2) \
-        &= qty(304704.005, "km").
-  $
-  Therefore,
-  $
-      r = qty(304704, "km") quad qed
-  $
+    $
+        D+D^3/3 = (2t)/(sqrt(p^3/mu)).
+    $
+    Its real solution is $D=6.7206602$. Since $r=p/(1+cos(theta))=r_p(1+D^2)$,
+    $
+        r & = qty(6600, "km")(1+6.7206602^2) \
+          & = qty(304704.005, "km").
+    $
+    Therefore,
+    $
+        r = qty(304704, "km") quad qed
+    $
 <hwk:s07b>
 
 #pagebreak(weak: true)
@@ -369,26 +367,26 @@ $
 ] <hwk:p08>
 
 + At perigee, $v_p^2=mu(1+e)/r_p$, while $v_"esc"^2=2mu/r_p$. Consequently,
-  $
-      e = 2(1.2)^2-1 = 1.88,
-      quad abs(a)=r_p/(e-1)=qty(7500, "km").
-  $
-  For a hyperbola,
-  $
-      M_h &= e sinh(F)-F = n(t-t_p), \
-      tanh(F/2) &= sqrt((e-1)/(e+1)) tan(theta/2), \
-      n &= sqrt(mu/abs(a)^3).
-  $
-  Evaluating $M_h$ at $theta=qty(90, "degree")$ and using symmetry about perigee yields
-  $
-      Delta t = qty(3597.03, "s") = qty(59.9504, "min") quad qed
-  $
+    $
+        e = 2(1.2)^2-1 = 1.88,
+        quad abs(a)=r_p/(e-1)=qty(7500, "km").
+    $
+    For a hyperbola,
+    $
+              M_h & = e sinh(F)-F = n(t-t_p), \
+        tanh(F/2) & = sqrt((e-1)/(e+1)) tan(theta/2), \
+                n & = sqrt(mu/abs(a)^3).
+    $
+    Evaluating $M_h$ at $theta=qty(90, "degree")$ and using symmetry about perigee yields
+    $
+        Delta t = qty(3597.03, "s") = qty(59.9504, "min") quad qed
+    $
 <hwk:s08a>
 
 + At $t-t_p=qty(24, "h")$, $M_h=n t$. Solving $e sinh(F)-F=M_h$, then using $r=abs(a)(e cosh(F)-1)$, gives
-  $
-      r = qty(656610.72, "km") quad qed
-  $
+    $
+        r = qty(656610.72, "km") quad qed
+    $
 <hwk:s08b>
 
 #pagebreak(weak: true)
@@ -399,8 +397,8 @@ $
 
 The orbit's perigee radius is $r_p=R_E+qty(200, "km")=qty(6578, "km")$. As in Problem 8,
 $
-    e &= 2(1.1)^2-1 = 1.42, \
-    abs(a) &= r_p/(e-1) = qty(15661.905, "km").
+         e & = 2(1.1)^2-1 = 1.42, \
+    abs(a) & = r_p/(e-1) = qty(15661.905, "km").
 $
 At 10 a.m., the vis-viva equation gives
 $
@@ -436,49 +434,49 @@ $
 ] <hwk:p09>
 
 + At the sighting, $r_0=R_E+qty(100000, "km")=qty(106378, "km")$. The specific angular momentum and energy are
-  $
-      h &= r_0 v_0 cos(gamma_0), \
-      cal(E) &= v_0^2/2-mu/r_0.
-  $
-  The orbital parameters are then
-  $
-      e &= sqrt(1+(2 cal(E) h^2)/mu^2) = 1.7899667, \
-      p &= h^2/mu, \
-      r_p &= p/(1+e) = qty(11046.133, "km").
-  $
-  Since $r_p>R_E$, the object misses Earth. Its closest-approach altitude is
-  $
-      r_p-R_E = qty(4668.133, "km").
-  $
-  Thus, it will
-  $
-      "fly by Earth" quad qed
-  $
+    $
+             h & = r_0 v_0 cos(gamma_0), \
+        cal(E) & = v_0^2/2-mu/r_0.
+    $
+    The orbital parameters are then
+    $
+          e & = sqrt(1+(2 cal(E) h^2)/mu^2) = 1.7899667, \
+          p & = h^2/mu, \
+        r_p & = p/(1+e) = qty(11046.133, "km").
+    $
+    Since $r_p>R_E$, the object misses Earth. Its closest-approach altitude is
+    $
+        r_p-R_E = qty(4668.133, "km").
+    $
+    Thus, it will
+    $
+        "fly by Earth" quad qed
+    $
 <hwk:s10a>
 
 + The hyperbola has
-  $
-      abs(a)=mu/(2 cal(E))=qty(13983.036, "km").
-  $
-  Obtain the incoming true anomaly from
-  $
-      cos(theta_0)=(p/r_0-1)/e,
-  $
-  choosing $theta_0<0$ because the object is approaching Earth. Then
-  $
-      F_0 &= 2 tanh^(-1)(sqrt((e-1)/(e+1)) tan(theta_0/2)), \
-      M_(h,0) &= e sinh(F_0)-F_0.
-  $
-  Perigee corresponds to $M_h=0$, so the remaining time is
-  $
-      Delta t = -M_(h,0)/sqrt(mu/abs(a)^3)
-               = qty(16150.953, "s")
-               = qty(4.48638, "h").
-  $
-  Therefore,
-  $
-      Delta t = qty(4.486, "h") quad qed
-  $
+    $
+        abs(a)=mu/(2 cal(E))=qty(13983.036, "km").
+    $
+    Obtain the incoming true anomaly from
+    $
+        cos(theta_0)=(p/r_0-1)/e,
+    $
+    choosing $theta_0<0$ because the object is approaching Earth. Then
+    $
+            F_0 & = 2 tanh^(-1)(sqrt((e-1)/(e+1)) tan(theta_0/2)), \
+        M_(h,0) & = e sinh(F_0)-F_0.
+    $
+    Perigee corresponds to $M_h=0$, so the remaining time is
+    $
+        Delta t = -M_(h,0)/sqrt(mu/abs(a)^3)
+        = qty(16150.953, "s")
+        = qty(4.48638, "h").
+    $
+    Therefore,
+    $
+        Delta t = qty(4.486, "h") quad qed
+    $
 <hwk:s10b>
 
 #pagebreak(weak: true)
