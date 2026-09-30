@@ -1,0 +1,4 @@
+e = 1.789966732; |a| = 13983.036188 km
+perigee radius = 11046.133398 km
+perigee altitude = 4668.133398 km
+trajectory outcome = flyby

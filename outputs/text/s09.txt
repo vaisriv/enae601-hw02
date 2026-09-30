@@ -1,0 +1,5 @@
+e = 1.420000000; |a| = 15661.904762 km
+radius at 10 a.m. = 20679.791782 km
+time from 10 a.m. to perigee = 0.656585931 h
+radius at 5 p.m. = 142628.717168 km
+altitude at 5 p.m. = 136250.717168 km

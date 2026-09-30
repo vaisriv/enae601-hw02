@@ -1,0 +1,1 @@
+time from -90 deg to +90 deg = 3202.808602 s = 53.380143 min
